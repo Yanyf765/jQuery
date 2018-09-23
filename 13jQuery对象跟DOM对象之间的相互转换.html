@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <style>
+        div{
+            height: 200px;
+            background-color: #222222;
+        }
+    </style>
+    <script>
+
+        $(document).ready(function () {
+            // DOM对象转换成jQuery对象
+            /*var btn = document.getElementById("btn");
+             $(btn).click(function () {
+             $("div").hide();
+             });*/
+
+            // jQuery对象转换成DOM对象
+            /*$("button")[1].onclick = function (){
+             alert("jQuery对象转换成dom对象");
+             };*/
+
+            $("button").get(0).onclick = function () {
+                alert("jQuery对象转换成dom对象");
+            }
+
+            // js里面的click() 方法：触发click事件
+            // js里面的onclick 是绑定点击事件
+            /*var btn = document.getElementById("btn");
+             btn.onclick = function () {
+             alert("我是btn的onclick");
+             };
+             btn.click();*/
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">我是按键2</button>
+    <button>我是按钮2</button>
+    <div>
+
+    </div>
+</body>
+</html>
