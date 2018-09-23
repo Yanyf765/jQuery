@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script>
+//        $(document).ready(function(){
+//            var $ = "我是$";
+//            $("#btn").click(function(){
+//                console.log($);
+//            });
+//        });
+
+        var iQuery = function(dom){
+            var obj = {
+                ready:function(func){
+                    if (dom.onload==="function"){
+                        var oldFunc = dom.onload;
+                        dom.onload = function(){
+                            //调用新的函数
+                            func();
+                            //调用旧的函数
+                            oldFunc();
+                        }
+                    }else{
+                        dom.onload();
+                    }
+                }
+            };
+
+            return obj;
+        };
+
+        jQuery(window).ready(function(){
+            alert("第一调用");
+        });
+
+        jQuery(window).ready(function(){
+            alert("第二调用");
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="我是按钮" id="btn"/>
+</body>
+</html>

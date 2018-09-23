@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("li").css("font-size",function(i,v){
+                console.log(i);
+                console.log(v);
+                return (i + 1) * parseInt(v) + "px";
+            });
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是li1元素</li>
+    <li>我是li2元素</li>
+    <li>我是li3元素</li>
+    <li>我是li4元素</li>
+</ul>
+</body>
+</html>
